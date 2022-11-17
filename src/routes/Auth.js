@@ -4,10 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faTwitter,
     faGoogle,
-    faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import AuthForm from "components/AuthForm";
+
+import { Link } from "react-router-dom";
 
 const Auth = () => {
     const onSocialClick = async (event) => {
@@ -35,7 +36,11 @@ const Auth = () => {
                 <button onClick={onSocialClick} name="google" className="authBtn">
                     구글로 로그인 <FontAwesomeIcon icon={faGoogle} />
                 </button>
-            </div>
-        </div>)
+            </div >
+            <Link to="/SignUp">
+                <button>이동하기</button>
+            </Link>
+        </div>
+    )
 };
 export default Auth;

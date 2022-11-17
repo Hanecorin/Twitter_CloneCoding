@@ -4,6 +4,7 @@ import Auth from "routes/Auth";
 import Home from "routes/Home";
 import Navigation from "components/Navigation";
 import Profile from "routes/Profile";
+import SignUp from "./SignUp";
 
 const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
     return (
@@ -35,6 +36,10 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                             <Auth />
                         </Route>
                         <Redirect from="*" to="/" />
+                        
+                        <Route exact path="/SignUp">
+                            <SignUp />
+                        </Route>
                     </>
                 )}
             </Switch>
